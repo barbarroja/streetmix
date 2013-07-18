@@ -13,12 +13,12 @@
  * March in the earnest.
  */
 -->
-<html lang='en'>
+<html lang='es'>
 <head>
   <title>Streetmix</title>
   
   <meta charset='utf-8'>
-  <meta http-equiv='Content-Language' content='en'>
+  <meta http-equiv='Content-Language' content='es'>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -29,29 +29,19 @@
   <script src='js/jquery-1.9.1.min.js'></script>
 
   <script src='js/scripts.js'></script>
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-38087461-1']);
-    _gaq.push(['_trackPageview']);
 
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
 </head>
 <body tabindex='1'>
   <div id='debug'><textarea></textarea></div>
-  <div id='loading'>Loading…</div>
+  <div id='loading'>Cargando…</div>
 
   <nav id='menu'>
-    <button id='options-menu-button'>Options</button>
+    <button id='options-menu-button'>Opciones</button>
   </nav>
 
   <div id='options-menu' class='menu'>
-    <a id='options-menu-imperial' href=''>Switch to imperial units</a>
-    <a id='options-menu-metric' href=''>Switch to metric units</a>
+    <a id='options-menu-imperial' href=''>Cambiar a unidades imperiales</a>
+    <a id='options-menu-metric' href=''>Cambiar a unidades métricas</a>
   </div>
 
   <header>
@@ -85,11 +75,11 @@
   <footer>
     <h1>Streetmix</h1>
 
-    <button id='undo'>Undo</button>
-    <button id='redo'>Redo</button>
+    <button id='undo'>Deshacer</button>
+    <button id='redo'>Rehacer</button>
 
     <div id='tools'>
-      <div id='trashcan'>Drag here to remove</div>
+      <div id='trashcan'>Poner aquí para borrar</div>
     </div>
   </footer>
 
@@ -98,26 +88,24 @@
       <img style='width: 480px; height: 60px; margin: 12px 0; margin-left: -8px' src='images/ui/title-dark.png'>
     </p>
     <p>
-    <strong>Streetmix</strong> is an interactive <a href="https://github.com/codeforamerica/streetmix#what-are-street-sections">street section</a> builder,
-      put together as a labs project by a group of 
-      2013 <a href='http://www.codeforamerica.org'>Code for America</a> fellows.
+    <strong>Streetmix</strong> es una herramienta en software libre para crear <a href="https://github.com/codeforamerica/streetmix#what-are-street-sections">perfiles de vía</a> desarrollado experimentalmente por
+      <a href='http://www.codeforamerica.org'>Code for America</a>.
     </p>
     <p>
-      This app is a work in progress, and in a very early stage. Stay tuned 
-      and send us your thoughts!
+      Esta versión es un forje desarrollado por <a href='http://www.resma.cl'>Resma</a> que incluye más vehiculos, paradas y esta traducido al Español.
     </p>
     <p>
-      <a href='https://github.com/codeforamerica/streetmix#readme'>More information</a>
+      <a href='https://github.com/codeforamerica/streetmix#readme'>Más información</a>
       ·
-      <a href='http://www.theatlanticcities.com/commute/2013/01/digital-mixing-board-your-street/4555/'><em>The Atlantic Cities</em> write-up</a>
+      <a href='http://www.theatlanticcities.com/commute/2013/01/digital-mixing-board-your-street/4555/'><em>The Atlantic Cities</em></a>
     <br>
-      <a href='mailto:streetmix@codeforamerica.org'>Contact via email</a>
+      <a href='mailto:ariel@resma.cl'>Contactar por correo</a>
       ·
-      <a href='http://twitter.com/streetmixapp'>Contact via Twitter</a>
+      <a href='http://twitter.com/arielresma'>Contactar por Twitter</a>
     <br>
-      <a href='https://github.com/codeforamerica/streetmix'>View source code</a>
+      <a href='https://github.com/codeforamerica/streetmix'>Ver el código fuente original</a>
       ·
-      <a href='https://github.com/codeforamerica/streetmix/issues'>File a bug/suggestion</a>
+      <a href='https://github.com/barbarroja/streetmix'>Ver el código fuente de esta versión</a>
     </p>
   </div>
   <script src='js/what-is-this.js'></script>
