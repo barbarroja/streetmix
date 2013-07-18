@@ -169,27 +169,17 @@ var main = (function(){
 
   var SEGMENT_INFO = {
     'sidewalk': {
-      name: 'Sidewalk',
+      name: 'Peatones',
       owner: SEGMENT_OWNER_PEDESTRIAN,
       defaultWidth: 6,
-      minWidth: 6,
+      minWidth: 3,
       graphics: {
         center: { x: 3, y: 5, width: 4, height: 15 },
         repeat: { x: 1, y: 5, width: 1, height: 15 }
       }
     },
-    "sidewalk-tree": {
-      name: 'Sidewalk w/ a small tree',
-      owner: SEGMENT_OWNER_NATURE,
-      zIndex: -1,
-      defaultWidth: 4,
-      graphics: {
-        center: { x: 13, y: 5, width: 6, height: 15 },
-        repeat: { x: 1, y: 5, width: 1, height: 15 }
-      }
-    },
     "sidewalk-tree-big": {
-      name: 'Sidewalk w/ a big tree',
+      name: 'Árboleda grande',
       owner: SEGMENT_OWNER_NATURE,
       defaultWidth: 4,
       zIndex: -1,
@@ -199,7 +189,7 @@ var main = (function(){
       }
     },
     "sidewalk-lamp-right": {
-      name: 'Sidewalk w/ a lamp',
+      name: 'Luminarias',
       group: 'sidewalk',
       owner: SEGMENT_OWNER_PEDESTRIAN,
       defaultWidth: 4,
@@ -210,7 +200,7 @@ var main = (function(){
       }
     },
     "sidewalk-lamp-both": {
-      name: 'Sidewalk w/ a lamp',
+      name: 'Luminarias',
       group: 'sidewalk',
       owner: SEGMENT_OWNER_PEDESTRIAN,
       defaultWidth: 6,
@@ -220,7 +210,7 @@ var main = (function(){
       }
     },
     "sidewalk-lamp-left": {
-      name: 'Sidewalk w/ a lamp',
+      name: 'Luminarias',
       group: 'sidewalk',
       owner: SEGMENT_OWNER_PEDESTRIAN,
       defaultWidth: 4,
@@ -231,7 +221,7 @@ var main = (function(){
       }
     },
     "planting-strip": {
-      name: 'Planting strip',
+      name: 'Grama',
       owner: SEGMENT_OWNER_NATURE,
       defaultWidth: 4,
       graphics: {
@@ -240,39 +230,27 @@ var main = (function(){
       }
     },
     "bike-lane-inbound": {
-      name: 'Bike lane',
+      name: 'Ciclovia',
       subname: 'Inbound',
       owner: SEGMENT_OWNER_BIKE,
-      defaultWidth: 6,
+      defaultWidth: 4,
       graphics: {
         center: { x: 92, y: 5, width: 4, height: 15 },
         repeat: { x: 90, y: 5, width: 1, height: 15 }
       }
     },
     "bike-lane-outbound": {
-      name: 'Bike lane',
+      name: 'Ciclovia',
       subname: 'Outbound',
       owner: SEGMENT_OWNER_BIKE,
-      defaultWidth: 6,
+      defaultWidth: 4,
       graphics: {
         center: { x: 97, y: 5, width: 4, height: 15 },
         repeat: { x: 90, y: 5, width: 1, height: 15 }
       }
     },
-    "parking-lane": {
-      name: 'Parking lane',
-      owner: SEGMENT_OWNER_CAR,
-      defaultWidth: 8,
-      minWidth: 8,
-      maxWidth: 10,
-      graphics: {
-        center: { x: 50, y: 5, width: 8, height: 15 },
-        repeat: { x: 26, y: 5, width: 1, height: 15 },
-        left: { x: 46, y: 5, width: 3, height: 15 }
-      }
-    },
     "drive-lane-inbound": {
-      name: 'Drive lane',
+      name: 'Carril',
       subname: 'Inbound',
       owner: SEGMENT_OWNER_CAR,
       defaultWidth: 10,
@@ -284,7 +262,7 @@ var main = (function(){
       }
     },
     "drive-lane-outbound": {
-      name: 'Drive lane',
+      name: 'Carril',
       subname: 'Outbound',
       owner: SEGMENT_OWNER_CAR,
       defaultWidth: 10,
@@ -295,19 +273,8 @@ var main = (function(){
         repeat: { x: 26, y: 5, width: 1, height: 15 }
       }
     },
-    "turn-lane": {
-      name: 'Turn lane',
-      owner: SEGMENT_OWNER_CAR,
-      defaultWidth: 10,
-      minWidth: 9,
-      maxWidth: 12,
-      graphics: {
-        center: { x: 81, y: 5, width: 8, height: 15 },
-        repeat: { x: 26, y: 5, width: 1, height: 15 }
-      }
-    },
     "bus-lane-inbound": {
-      name: 'Bus lane',
+      name: 'Carril Bus',
       subname: 'Inbound',
       owner: SEGMENT_OWNER_PUBLIC_TRANSIT,
       defaultWidth: 10,
@@ -319,7 +286,7 @@ var main = (function(){
       }
     },
     "bus-lane-outbound": {
-      name: 'Bus lane',
+      name: 'Carril Bus',
       subname: 'Outbound',
       owner: SEGMENT_OWNER_PUBLIC_TRANSIT,
       defaultWidth: 10,
@@ -331,12 +298,77 @@ var main = (function(){
       }
     },
     "small-median": {
-      name: 'Small median',
+      name: 'Separador',
       owner: SEGMENT_OWNER_CAR,
       defaultWidth: 4,
       graphics: {
         center: { x: 22, y: 5, width: 3, height: 15 },
         repeat: { x: 20, y: 5, width: 1, height: 15 }
+      }
+    },
+    "moto-lane-inbound": {
+      name: 'Motovia',
+      subname: 'Inbound',
+      owner: SEGMENT_OWNER_BIKE,
+      defaultWidth: 4,
+      minWidth: 3,
+      graphics: {
+        center: { x: 170, y: 5, width: 3, height: 15 },
+        repeat: { x: 90, y: 5, width: 1, height: 15 }
+      }
+    },
+    "moto-lane-outbound": {
+      name: 'Motovia',
+      subname: 'Outbound',
+      owner: SEGMENT_OWNER_BIKE,
+      defaultWidth: 4,
+      minWidth: 3,
+      graphics: {
+        center: { x: 175, y: 5, width: 3, height: 15 },
+        repeat: { x: 90, y: 5, width: 1, height: 15 }
+      }
+    },
+    "bus-stop-inbound": {
+      name: 'Parada',
+      group: 'sidewalk',
+      owner: SEGMENT_OWNER_PEDESTRIAN,
+      defaultWidth: 6,
+      graphics: {
+        center: { x: 180, y: 0, offsetY: -5, width: 9, height: 20 },
+        repeat: { x: 1, y: 5, width: 1, height: 15 },
+      }
+    },
+    "sidewalk-tree": {
+      name: 'Demarcación',
+      owner: SEGMENT_OWNER_CAR,
+      defaultWidth: 2,
+      minWidth: 2,
+      maxWidth: 10,
+      graphics: {
+        center: { x: 190, y: 5, width: 2, height: 15 },
+        repeat: { x: 90, y: 5, width: 1, height: 15 }
+      }
+    },
+    "parking-lane": {
+      name: 'Segregación pequeña',
+      owner: SEGMENT_OWNER_CAR,
+      defaultWidth: 2,
+      minWidth: 2,
+      maxWidth: 10,
+      graphics: {
+        center: { x: 192, y: 5, width: 2, height: 15 },
+        repeat: { x: 90, y: 5, width: 1, height: 15 }
+      }
+    },
+    "turn-lane": {
+      name: 'Segregación grande',
+      owner: SEGMENT_OWNER_CAR,
+      defaultWidth: 2,
+      minWidth: 2,
+      maxWidth: 10,
+      graphics: {
+        center: { x: 194, y: 5, width: 2, height: 15 },
+        repeat: { x: 90, y: 5, width: 1, height: 15 }
       }
     },
   };
@@ -353,11 +385,11 @@ var main = (function(){
     60: [
       { type: "sidewalk", width: 6 },
       { type: "sidewalk-tree", width: 6 },
-      { type: "bike-lane-inbound", width: 6 },
+      { type: "bike-lane-inbound", width: 5 },
       { type: "drive-lane-inbound", width: 10 },
       { type: "drive-lane-outbound", width: 10 },
       { type: "planting-strip", width: 4 },
-      { type: "bike-lane-outbound", width: 6 },
+      { type: "bike-lane-outbound", width: 5 },
       { type: "sidewalk-tree", width: 6 },
       { type: "sidewalk", width: 6 }
     ],
@@ -365,13 +397,13 @@ var main = (function(){
       { type: "sidewalk", width: 6 },
       { type: "sidewalk-tree-big", width: 4 },
       { type: "sidewalk-lamp-right", width: 2 },
-      { type: "bike-lane-inbound", width: 6 },
+      { type: "bike-lane-inbound", width: 5 },
       { type: "drive-lane-inbound", width: 10 },
       { type: "drive-lane-inbound", width: 10 },
       { type: "sidewalk-lamp-both", width: 4 },
       { type: "drive-lane-outbound", width: 10 },
       { type: "drive-lane-outbound", width: 10 },
-      { type: "bike-lane-outbound", width: 6 },
+      { type: "bike-lane-outbound", width: 5 },
       { type: "sidewalk-lamp-left", width: 2 },
       { type: "sidewalk-tree-big", width: 4 },
       { type: "sidewalk", width: 6 }
@@ -991,8 +1023,8 @@ var main = (function(){
     html += '<section class="content">';
     if (segment.warnings[SEGMENT_WARNING_OUTSIDE]) {
       html += '<p class="warning">';
-      html += '<strong>This segment doesn’t fit within the street.</strong> ';
-      html += 'Resize the segment or remove other segments.';
+      html += '<strong>El elemento no cabe en el ancho del perfil.</strong> ';
+      html += 'Reduzca el ancho, o elimine otros elementos.';
       html += '</p>';
     }
     if (segment.warnings[SEGMENT_WARNING_WIDTH_TOO_SMALL]) {
@@ -1003,7 +1035,7 @@ var main = (function(){
     }
     if (segment.warnings[SEGMENT_WARNING_WIDTH_TOO_LARGE]) {
       html += '<p class="warning">';
-      html += '<strong>This segment is too wide.</strong> ';
+      html += '<strong>El elemento es muy ancho.</strong> ';
       html += 'Drive lanes over 15" lorem ipsum.';
       html += '</p>';
     }
@@ -1204,7 +1236,7 @@ var main = (function(){
       innerEl.classList.add('grid');
       el.appendChild(innerEl);
     } else {
-    	el.setAttribute('title', SEGMENT_INFO[type].name);
+      el.setAttribute('title', SEGMENT_INFO[type].name);
     }
 
     if (width) {
@@ -2194,7 +2226,7 @@ var main = (function(){
 
     var el = document.createElement('option');
     el.disabled = true;
-    el.innerHTML = 'Building-to-building width:';
+    el.innerHTML = 'Ancho de la sección de vía';
     document.querySelector('#street-width').appendChild(el);  
 
     var widths = [];    
@@ -2218,7 +2250,7 @@ var main = (function(){
 
     var el = document.createElement('option');
     el.value = STREET_WIDTH_CUSTOM;
-    el.innerHTML = 'Custom…';
+    el.innerHTML = 'Personalizada...';
     document.querySelector('#street-width').appendChild(el);  
 
     document.querySelector('#street-width').value = data.streetWidth;    
@@ -2233,9 +2265,9 @@ var main = (function(){
     }
 
     if (newStreetWidth == STREET_WIDTH_CUSTOM) {
-      var width = prompt("Enter the new street width (from " + 
+      var width = prompt("Ingresa el ancho de sección (desde " + 
           _prettifyWidth(MIN_CUSTOM_STREET_WIDTH, PRETTIFY_WIDTH_OUTPUT_NO_MARKUP) + 
-          " to " + 
+          " hasta " + 
           _prettifyWidth(MAX_CUSTOM_STREET_WIDTH, PRETTIFY_WIDTH_OUTPUT_NO_MARKUP) + 
           "):");
 
@@ -2277,7 +2309,7 @@ var main = (function(){
       _removeElFromDom(el);
       _segmentsChanged();
 
-      _statusMessage.show('The segment has been deleted.', true);
+      _statusMessage.show('El elemento ha sido eliminado.', true);
     }
   } 
 
@@ -2454,7 +2486,7 @@ var main = (function(){
 
       if (undo) {
         var buttonEl = document.createElement('button');
-        buttonEl.innerHTML = 'Undo';
+        buttonEl.innerHTML = 'Deshacer';
         buttonEl.addEventListener('click', _undo);
         document.querySelector('#status-message > div').appendChild(buttonEl);
       }
